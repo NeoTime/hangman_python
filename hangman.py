@@ -1,0 +1,3 @@
+# Hangman
+
+lives = 10
