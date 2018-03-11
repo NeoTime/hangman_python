@@ -5,7 +5,7 @@
 import random
 
 # Welcome
-def welcomeScreen();
+def welcomeScreen():
     #Let user type name
     name = input("Enter Your Name: ")
     #WELCOME THE USER
@@ -47,3 +47,47 @@ def hangman():
         print("Guess the word:", msg)
 
         guess = input()
+
+        if guess in validLetters:
+            guessed = guessed + guess
+        else:
+            print("Enter a valid letter. ")
+
+            guess = input()
+
+        if guess not in word:
+            turns = turns -1
+            if turns == 9:
+                print (" o")
+            if turns == 8:
+                print (" o")
+                print (" |")
+            if turns == 7:
+                print ("  o")
+                print ("  |")
+                print (" | \ ")
+            if turns == 6:
+                print ("  o")
+                print ("  |")
+                print (" / ")
+            if turns == 5:
+                print ("  o")
+                print ("  |")
+                print (" / \ ")
+            if turns == 4:
+                print ("  o")
+                print ("  |")
+                print ("_/ \_ ")
+            if turns == 3:
+                print ("  o")
+                print ("  |-")
+                print ("_/ \_ ")
+            if turns == 2:
+                print ("  o")
+                print (" -|-")
+                print ("_/ \_ ")
+            if turns == 1:
+                print ("YOU HAVE FAILED TO GUESS: ", word)
+                break
+
+welcomeScreen()
